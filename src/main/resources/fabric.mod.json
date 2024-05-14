@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "mekanism-fabric",
+	"version": "${version}",
+	"name": "mekanism-fabric",
+	"description": "Casually attempting to port Mekanism over to Fabric for Minecraft 1.20.1",
+	"authors": [
+		"Andy608"
+	],
+	"contact": {
+		"homepage": "https://andysmods.com/mekanism-fabric",
+		"sources": "https://github.com/AndysMods/mekanism-fabric"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mekanism-fabric/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.andysmods.mekanism.Mekanism"
+		],
+		"client": [
+			"com.andysmods.mekanism.MekanismClient"
+		],
+		"fabric-datagen": [
+			"com.andysmods.mekanism.MekanismDataGenerator"
+		]
+	},
+	"mixins": [
+		"mekanism-fabric.mixins.json",
+		{
+			"config": "mekanism-fabric.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
